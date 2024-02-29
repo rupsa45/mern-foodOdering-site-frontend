@@ -26,7 +26,7 @@ const ImageSection = () => {
         }
         <FormField 
             control={control} 
-            name="imageUrl"
+            name="imageFile"
             render={({field})=>(
                 <FormItem>
                     <FormControl>
