@@ -11,7 +11,7 @@ import {
     FormMessage 
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import LoadingButtun from '@/components/LoadingButton/LoadingButtun';
+import LoadingButtun from '@/components/LoadingButton/LoadingBottun';
 import { Button } from '@/components/ui/button';
 import { User } from '@/type';
 import { useEffect } from 'react';

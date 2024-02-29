@@ -17,10 +17,18 @@ const {user,logout} =useAuth0()
       <DropdownMenuContent>
         <DropdownMenuItem>
         <Link 
+         to='/manage-restaurant'
+         className="font-bold  hover:text-purple-600"
+        >
+          Manage Restaurant
+        </Link> 
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+        <Link 
          to='/user-profile'
          className="font-bold  hover:text-purple-600"
         >
-            View Profile
+          View Profile
         </Link> 
         </DropdownMenuItem>
         <Separator/>
