@@ -16,7 +16,7 @@ const HomePages = () => {
           Enjoy a takeaway meal today.
         </h1>
         <span className="text-xl">Delicious food is just a click away!</span>
-        <SearchBar placeHolder='Search your city and country' onSubmit={handleSearchSubmit}/>
+        <SearchBar placeHolder='search by [city name]' onSubmit={handleSearchSubmit}/>
       </div>
       <div className="grid md:grid-cols-2 gap-5">
         <img src={food}/>
