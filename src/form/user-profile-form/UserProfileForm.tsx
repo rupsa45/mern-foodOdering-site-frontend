@@ -15,6 +15,9 @@ import LoadingButtun from '@/components/LoadingButton/LoadingBottun';
 import { Button } from '@/components/ui/button';
 import { User } from '@/type';
 import { useEffect } from 'react';
+
+
+
 const formSchema=z.object({
     email:z.string().optional(),
     name:z.string().min(1,"name is required"),
@@ -22,16 +25,23 @@ const formSchema=z.object({
     city:z.string().min(1,"city is required"),
     country:z.string().min(1,"country is required"),
 })
-type UserFormData = z.infer<typeof formSchema>  
+
+export type UserFormData = z.infer<typeof formSchema>  
 
 type Props={
     currentUser:User;
-onSave:(userProfileData:UserFormData)=>void;
-isLoading:boolean,
-
+    onSave:(userProfileData:UserFormData)=>void;
+    isLoading:boolean,
+    title?:string;
+    buttontext?:string;
 }
 
-const UserProfileForm = ({ onSave,isLoading,currentUser }:Props) => {
+const UserProfileForm = ({ onSave,
+    isLoading,
+    currentUser,
+    title="Personal Information",
+    buttontext="Submit" 
+    }:Props) => {
     const form=useForm<UserFormData>({
         resolver:zodResolver(formSchema),
         defaultValues:currentUser
@@ -47,7 +57,7 @@ const UserProfileForm = ({ onSave,isLoading,currentUser }:Props) => {
        >
         <div>
             <h2 className='text-2xl font-bold '>
-                Personal Information
+                {title}
             </h2>
             <FormDescription>
                 Use this form to update your personal information.
@@ -122,7 +132,7 @@ const UserProfileForm = ({ onSave,isLoading,currentUser }:Props) => {
                <LoadingButtun/>
             ) :(
             <Button type='submit'  className='bg-purple-700'>
-                Submit
+                {buttontext}
             </Button>
             )
         }
