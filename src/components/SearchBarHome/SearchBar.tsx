@@ -50,7 +50,8 @@ const SearchBar = ({onSubmit,placeHolder,onReset,searchQuery}:Props) => {
             className={`flex items-center  gap-3 justify-between flex-row border-2 rounded-full p-3 
             ${form.formState.errors.searchQuery && "border-red-700"}`}
         >
-            <Search strokeWidth={2.5} size={30} className="ml-1 text-purple-600 hidden md:block"/>
+            <Search strokeWidth={2.5} size={30} 
+            className="ml-1 text-purple-600 hidden md:block"/>
             <FormField 
                 control={form.control}
                 name="searchQuery"
